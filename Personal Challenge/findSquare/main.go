@@ -4,10 +4,13 @@ import "fmt"
 
 func findSquare(row, col int, maps [][]string) int {
 	var count int = 0
-	// var dot string = "."
+	var dot string = "."
 
-	for y:=0; y <= row; y++ { 
-		for x:=0; x <= col; x++ {
+	for y:=0; y < row; y++ { 
+		for x:=0; x < col; x++ {
+			if maps[y][x] != dot{
+				continue
+			}
 			for ymove := 0; ymove <= row-y; ymove++ {
 				for xmove := 0; xmove <= col-x; xmove++ {
 					if x == x+xmove || y == y+ymove {
