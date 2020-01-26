@@ -1,0 +1,5 @@
+puts(self)
+puts(2.even?)
+puts(2.odd?)
+puts(1.next)
+puts(1.next.next)
