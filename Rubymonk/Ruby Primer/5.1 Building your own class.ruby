@@ -14,3 +14,21 @@ end
 data = Rectangle.new(10,10)
 p(data.perimeter())
 p(data.area())
+
+class Car
+    @make
+    @@wheels = 4
+
+    def initialize(make)
+        @make = make
+    end
+
+    def self.wheels
+        @@wheels
+    end
+    attr_accessor :make
+end
+
+civic = Car.new("Honda")
+p civic.make
+p Car.wheels
