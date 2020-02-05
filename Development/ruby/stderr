@@ -1,0 +1,2 @@
+1.IO.rb:50:in `gets': Bad file descriptor @ io_fillbuf - fd:0 <STDIN> (Errno::EBADF)
+	from 1.IO.rb:50:in `<main>'
