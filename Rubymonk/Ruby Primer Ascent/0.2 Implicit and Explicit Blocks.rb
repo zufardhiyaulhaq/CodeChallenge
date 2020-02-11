@@ -20,7 +20,7 @@ end
 puts(arrayf([1,2,3,4]) {|number| number.even?()})
 
 def arrayf2(array, block)
-    array.select(&block)
+  array.select(&block)
 end
 
 puts(arrayf2([1,2,3,4], lambda{|number| number.even?}))

@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: MyString
+  email: MyString
+  map: 1
+  ship: MyText
+  missile: MyText
+
+two:
+  user: MyString
+  email: MyString
+  map: 1
+  ship: MyText
+  missile: MyText

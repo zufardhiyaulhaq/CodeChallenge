@@ -1,0 +1,25 @@
+{
+    "name": "Zufar Dhiyaulhaq",
+    "email": "zufardhiyaulhaq@gmail.com",
+    "map": 5,
+    "ship": [
+        {
+            "x": 1,
+            "y": 2
+        },
+        {
+            "x": 2,
+            "y": 2
+        }
+    ],
+    "missile": [
+        {
+            "x": 3,
+            "y": 3
+        },
+        {
+            "x": 4,
+            "y": 4
+        }
+    ]
+}
