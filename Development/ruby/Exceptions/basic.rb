@@ -21,3 +21,4 @@ get_null_device
 rescue Errno::ENOENT
   puts "Can't open IO device: #{f}."
 end
+
