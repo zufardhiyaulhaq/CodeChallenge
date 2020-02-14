@@ -22,7 +22,7 @@ end
 def dfs(board, letter, row, column, progress)
 
   return false if board[row][column] != letter[progress]
-  return true if progress >= letter.length()-1
+  return true if progress == letter.length()-1
 
   row_max = board.length
   column_max = board[0].length
@@ -37,7 +37,6 @@ def dfs(board, letter, row, column, progress)
     row_next = row + row_movement[direction]
     column_next = column + column_movement[direction]
 
-    
     if row_next >= 0 && column_next >=0 && row_next < row_max && column_next < column_max && board[row_next][column_next] == letter[progress+1]
       if dfs(board, letter, row_next, column_next, progress+1)
         return true
@@ -45,8 +44,7 @@ def dfs(board, letter, row, column, progress)
     end
   end
 
-  board[row][column] = temp
-  return false
+  false
 end
 
 row = gets.to_i
