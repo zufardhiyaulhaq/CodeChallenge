@@ -7,7 +7,9 @@ Rails.application.routes.draw do
 
   get '/worlds', to: 'world#index'
   get '/world/', to: 'world#show'
+  get '/world/play', to: 'world#play'
   post '/world/', to: 'world#create'
   delete '/world/', to: 'world#delete'
+
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

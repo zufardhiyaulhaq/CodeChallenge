@@ -8,6 +8,13 @@ class UserController < ApplicationController
 
   def create
     if User.where(email: user_params[:email]).blank?
+
+      user_params[:missile].each do |m|
+        if user_params[:ship].include?(m)
+          return render json: {"status": "player missile coordinate cannot attack the player ship"}
+        end
+      end
+      
       @user = User.new(user_params)
       @user.save
       render json: { "status": 'User is created!' }
@@ -28,8 +35,9 @@ class UserController < ApplicationController
   def delete
     @user = User.find_by(email: find_params[:email])
     if @user.nil?
-      @user.destroy
+      render json: { "status": 'User is not fould!' }
     else
+      @user.destroy
       render json: { "status": 'User is deleted!' }
     end
   end

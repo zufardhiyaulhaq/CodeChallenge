@@ -5,7 +5,7 @@ class WorldController < ApplicationController
   end
 
   def show
-    @world = World.find_by(email: find_params[:name])
+    @world = World.find_by(name: find_params[:name])
     if @world.nil?
       render json: { "status": 'World not found!' }
     else
@@ -14,7 +14,18 @@ class WorldController < ApplicationController
   end
 
   def create
-    if World.where(email: world_params[:name]).blank?
+    world_params[:player].each do |p|
+      @player = User.find_by(email: p)
+      if @player.nil?
+          return render json: { "status": "Player #{p} not found" }
+      end
+
+      if @player.map != world_params[:map]
+        return render json: { "status": "Player #{p} have different map number" }
+      end
+    end
+
+    if World.where(name: world_params[:name]).blank?
       @world = World.new(world_params)
       @world.save
       render json: { "status": 'world is created!' }
@@ -24,16 +35,20 @@ class WorldController < ApplicationController
   end
 
   def delete
-    @world = Wolrd.find_by(name: find_params[:name])
+    @world = World.find_by(name: find_params[:name])
     if @world.nil?
-      @world.destroy
+      render json: { "status": 'World is not found!' }
     else
+      @world.destroy
       render json: { "status": 'World is deleted!' }
     end
   end
 
+  def play
+  end
+
   def world_params
-    params.permit(:name, :map, ship: [])
+    params.permit(:name, :map, player: [])
   end
 
   def find_params
