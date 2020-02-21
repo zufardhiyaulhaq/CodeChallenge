@@ -42,5 +42,11 @@ RSpec.describe 'Map' do
         expect(map.map[0].length).to eql(grid)
       end
     end
+
+    context 'when try to write' do
+      it 'should return error' do
+        expect { map.map = 1 }.to raise_error(NoMethodError)
+      end
+    end
   end
 end
