@@ -22,7 +22,7 @@ RSpec.describe 'Coordinate' do
       end
     end
 
-    context 'when called with by passing other argument type' do
+    context 'when called with by passing other than integer' do
       it 'should return error' do
         expect { Coordinate.new(1.2, 2.1) }.to raise_error(ArgumentError)
         expect { Coordinate.new(1, 'haha') }.to raise_error(ArgumentError)
