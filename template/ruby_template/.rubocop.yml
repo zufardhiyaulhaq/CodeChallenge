@@ -1,11 +1,5 @@
 Style/Documentation:
   Enabled: false
-Style/For:
-  Enabled: false
-Style/IfUnlessModifier:
-  Enabled: false
-Style/ConditionalAssignment:
-  Enabled: false
 Style/FrozenStringLiteralComment:
   Enabled: false
 Layout/LineLength:
@@ -16,9 +10,7 @@ Metrics/ClassLength:
   Enabled: false
 Metrics/BlockLength:
   Enabled: false
-Metrics/AbcSize:
-  Enabled: false
-Metrics/BlockNesting:
-  Enabled: false
 Naming/MethodParameterName:
+  Enabled: false
+Style/IfUnlessModifier:
   Enabled: false
