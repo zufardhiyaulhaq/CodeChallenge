@@ -1,22 +1,15 @@
 class Player
   attr_reader :name
+  attr_reader :map
 
-  def initialize(name)
-    if name.class != String
-      raise ArgumentError, 'Err: argument should be String'
+  def initialize(name, map)
+    if name.class != String || map.class != Map
+      raise ArgumentError, 'Err: argument should be String & Map'
     end
 
     @name = name
-    @ship = []
-    @missile = []
-  end
-
-  def add_map(map)
-    if map.class != Map
-      raise ArgumentError, 'Err: argument should be Map'
-    end
-
     @map = map
+    @missile = []
   end
 
   def add_ship(ship)
@@ -24,7 +17,9 @@ class Player
       raise ArgumentError, 'Err: argument should be Coordinate'
     end
 
-    @ship.push(ship)
+    # :nocov:
+    @player_map.map[ship.x_axis][ship.y_axis] = 'S'
+    # :nocov:
   end
 
   def add_missile(missile)
@@ -35,7 +30,9 @@ class Player
     @missile.push(missile)
   end
 
+  # :nocov:
   def attack(enemy)
     @enemy = enemy
   end
+  # :nocov:
 end

@@ -34,3 +34,7 @@ Layout/EmptyLinesAroundAccessModifier:
 # no space inside block braces
 Layout/SpaceInsideBlockBraces:
   EnforcedStyle: no_space
+
+# word array style
+Style/WordArray:
+  EnforcedStyle: brackets
