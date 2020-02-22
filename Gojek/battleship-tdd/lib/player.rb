@@ -26,4 +26,12 @@ class Player
 
     @ship.push(ship)
   end
+
+  def add_missile(missile)
+    if missile.class != Coordinate
+      raise ArgumentError, 'Err: argument should be Coordinate'
+    end
+
+    @missile.push(missile)
+  end
 end

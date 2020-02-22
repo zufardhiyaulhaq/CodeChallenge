@@ -48,8 +48,23 @@ RSpec.describe 'Player' do
         expect {player.add_ship(ship)}.not_to raise_error
       end
 
-      it 'should Fail if give other then Coordinate' do
+      it 'should Fail if give other than Coordinate' do
         expect {player.add_ship(1)}.to raise_error(ArgumentError)
+      end
+    end
+  end
+
+  describe '#add_missile' do
+    context 'when calling' do
+      subject(:player) {Player.new('zufar')}
+
+      it 'should success if give a Coordinate' do
+        missile = double('missile', class: Coordinate)
+        expect {player.add_missile(missile)}.not_to raise_error
+      end
+
+      it 'should fail if give other than Coordinate' do
+        expect {player.add_missile('string')}.to raise_error(ArgumentError)
       end
     end
   end
