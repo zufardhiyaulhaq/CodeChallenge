@@ -34,4 +34,8 @@ class Player
 
     @missile.push(missile)
   end
+
+  def attack(enemy)
+    @enemy = enemy
+  end
 end

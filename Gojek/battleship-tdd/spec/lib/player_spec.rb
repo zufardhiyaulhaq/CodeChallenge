@@ -68,4 +68,27 @@ RSpec.describe 'Player' do
       end
     end
   end
+
+  describe '#attack' do
+    context 'when calling' do
+      subject(:player1) {Player.new('zufar')}
+      subject(:player2) {Player.new('via')}
+
+      it 'should success if give a Player class' do
+        player1_ship = double('ship', class: Coordinate)
+        player2_ship = double('ship', class: Coordinate)
+
+        player1_missile = double('missile', class: Coordinate)
+        player2_missile = double('missile', class: Coordinate)
+
+        player1.add_ship(player1_ship)
+        player2.add_ship(player2_ship)
+
+        player1.add_missile(player1_missile)
+        player2.add_missile(player2_missile)
+
+        expect {player1.attack(player2)}.not_to raise_error
+      end
+    end
+  end
 end
