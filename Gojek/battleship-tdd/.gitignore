@@ -1,10 +1,9 @@
-
+# fucking ds_store
 .DS_Store
-.idea/**
-.rbenv-gemsets
+
+# default from ruby gitignore
 *.gem
 *.rbc
-coverage
 /.config
 /coverage/
 /InstalledFiles
@@ -14,7 +13,6 @@ coverage
 /test/tmp/
 /test/version_tmp/
 /tmp/
-
 
 # Used by dotenv library to load environment variables.
 # .env

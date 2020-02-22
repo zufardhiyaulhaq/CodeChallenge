@@ -12,6 +12,6 @@ RuboCop::RakeTask.new(:linter) do |test|
 end
 
 task :default do
-  Rake::Task['linter'].invoke
   Rake::Task['tester'].invoke
+  Rake::Task['linter'].invoke
 end

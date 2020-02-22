@@ -14,6 +14,6 @@ class Map
   end
 
   def create(grid)
-    @map = Array.new(grid) { Array.new(grid, '_') }
+    @map = Array.new(grid) {Array.new(grid, '_')}
   end
 end
