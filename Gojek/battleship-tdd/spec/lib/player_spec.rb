@@ -55,4 +55,37 @@ RSpec.describe 'Player' do
       end
     end
   end
+
+  describe '#attack' do
+    context 'when calling with Player argument' do
+      it 'should success' do
+        player1_map = double('map', class: Map)
+        player2_map = double('map', class: Map)
+
+        player1 = Player.new('zufar', player1_map)
+        player2 = Player.new('shafira', player2_map)
+
+        expect {player1.attack(player2)}.not_to raise_error
+      end
+    end
+
+    context 'when calling with other argument' do
+      it 'should failed' do
+        player1_map = double('map', class: Map)
+        player1 = Player.new('zufar', player1_map)
+
+        expect {player1.attack(1)}.to raise_error(ArgumentError)
+      end
+    end
+  end
+
+  describe '#count_ship' do
+    it 'return 0 ship' do
+      player1_map = double('map', class: Map)
+      allow(player1_map).to receive(:count) {0}
+
+      player1 = Player.new('zufar', player1_map)
+      expect(player1.count_ship).to eql(0)
+    end
+  end
 end

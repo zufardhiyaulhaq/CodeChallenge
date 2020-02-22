@@ -10,10 +10,35 @@ class Map
       raise ArgumentError, 'Err: argument should be positive integer'
     end
 
-    create(grid)
+    @map = Array.new(grid) {Array.new(grid, '_')}
+    @grid = grid
   end
 
-  def create(grid)
-    @map = Array.new(grid) {Array.new(grid, '_')}
+  def change(coordinate, value)
+    if coordinate.class != Coordinate
+      raise ArgumentError, 'Err first argument should be Coordinate'
+    end
+
+    if coordinate.x_axis >= @grid || coordinate.y_axis >= @grid
+      raise RangeError, 'Err coordinate outsite map area'
+    end
+
+    @map[coordinate.x_axis][coordinate.y_axis] = value
+  end
+
+  def get(coordinate)
+    if coordinate.class != Coordinate
+      raise ArgumentError, 'Err first argument should be Coordinate'
+    end
+
+    if coordinate.x_axis >= @grid || coordinate.y_axis >= @grid
+      raise RangeError, 'Err coordinate outsite map area'
+    end
+
+    @map[coordinate.x_axis][coordinate.y_axis]
+  end
+
+  def count(value)
+    @map.flatten.count(value)
   end
 end

@@ -34,7 +34,13 @@ Layout/EmptyLinesAroundAccessModifier:
 # no space inside block braces
 Layout/SpaceInsideBlockBraces:
   EnforcedStyle: no_space
+  SpaceBeforeBlockParameters: false
+
+# disable maximum abc in method
+Metrics/AbcSize:
+  Enabled: false
 
 # word array style
 Style/WordArray:
   EnforcedStyle: brackets
+

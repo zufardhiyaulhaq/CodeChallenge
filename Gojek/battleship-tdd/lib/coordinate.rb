@@ -7,7 +7,7 @@ class Coordinate
     end
 
     if x_axis.negative? || y_axis.negative?
-      raise ArgumentError, 'Err: Coordinate must be positive Integer'
+      raise ArgumentError, 'Err: Coordinate must be zero or positive Integer'
     end
 
     @x_axis = x_axis
