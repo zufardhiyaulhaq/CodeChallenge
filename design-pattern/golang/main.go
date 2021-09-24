@@ -1,8 +1,13 @@
 package main
 
-import "github.com/zufardhiyaulhaq/go-design-pattern/factory"
+import (
+	"fmt"
+
+	"github.com/zufardhiyaulhaq/go-design-pattern/factory"
+)
 
 func main() {
+	// factory content
 	var zufar factory.ContentCreator
 	zufar = &factory.Zufar{}
 
@@ -14,4 +19,9 @@ func main() {
 
 	zufarContent.Play()
 	dilaContent.Play()
+
+	// factory gun
+	ak47, _ := factory.GetGun("ak47")
+	fmt.Println(ak47.GetName())
+	fmt.Println(ak47.GetPower())
 }

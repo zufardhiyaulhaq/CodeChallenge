@@ -2,6 +2,7 @@ package factory
 
 import "fmt"
 
+// 
 type Content interface {
 	Play()
 }
